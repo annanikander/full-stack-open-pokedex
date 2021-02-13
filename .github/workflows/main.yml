@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - HEAD:master
+      - master
 
 jobs:
   build:
@@ -15,4 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: fullstack-pokedex-anna #Must be unique in Heroku
           heroku_email: anna.nikander@aalto.fi
-          #remote_branch: master
+          remote_branch: master
