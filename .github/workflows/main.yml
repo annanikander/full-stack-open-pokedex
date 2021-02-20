@@ -32,7 +32,6 @@ jobs:
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: master
       - name: successful slack message
-        if: ${{ success() }}
         uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -46,11 +45,12 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: ${{ success() }}
       - name: failed slack message
-        if: ${{ failure() }}
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,took
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: ${{ failure() }}
