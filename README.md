@@ -4,7 +4,7 @@ This repository is used for the CI/CD module of the Full stack open course
 
 Fork the repository to complete course exercises
 
-Repository of the example CI/CD app: https://github.com/annanikander/patientor-test
+Repository of the example CI/CD app: https://github.com/annanikander/phonebook-app
 
 ## Commands
 
